@@ -1,9 +1,5 @@
 # Capstone Projects — Phase 1
 
-**Participant:** Anandhavelu A  
-**Organization:** Prodapt Solutions Private Limited  
-**Batch:** AFDE  
-**Tech Stack:** React + Python FastAPI + SQLite
 
 ---
 
