@@ -1,3 +1,377 @@
+# Capstone Projects — Phase 1
+
+**Participant:** Anandhavelu A  
+**Organization:** Prodapt Solutions Private Limited  
+**Batch:** AFDE  
+**Tech Stack:** React + Python FastAPI + SQLite
+
+---
+
+## Projects Overview
+
+| # | Project | Code | Folder |
+|---|---------|------|--------|
+| 1 | Helpdesk Ticket Management System | HDMS | `HDMS/` |
+| 2 | Customer Complaint & Resolution Tracking System | CCRTS | `CCRTS/` |
+| 3 | Enterprise Knowledge Base Management System | EKBMS | `EKBMS/` |
+
+---
+
+## Common Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Frontend | React 18, React Router v6, Axios, Vite |
+| Backend | Python FastAPI, SQLAlchemy ORM |
+| Database | SQLite (auto-created on first run) |
+| API Testing | Swagger UI (built-in at `/docs`) |
+
+---
+
+## Common Setup Instructions
+
+### Prerequisites
+- Python 3.9+
+- Node.js 18+
+- npm
+
+### Running Any Project
+
+**Step 1 — Start the Backend**
+```bash
+cd <PROJECT_FOLDER>/backend
+pip install -r requirements.txt
+uvicorn main:app --reload
+```
+Backend runs at: `http://localhost:8000`  
+Swagger API Docs: `http://localhost:8000/docs`
+
+**Step 2 — Start the Frontend** (new terminal)
+```bash
+cd <PROJECT_FOLDER>/frontend
+npm install
+npm run dev
+```
+Frontend runs at: `http://localhost:5173`
+
+---
+
+---
+
+## Project 1 — Helpdesk Ticket Management System (HDMS)
+
+### Description
+A web-based system for managing internal IT support tickets. Employees can raise support requests and support admins can track, update, and resolve them efficiently.
+
+### Features
+- Create support tickets with department, category, and priority
+- View all tickets with real-time dashboard stats
+- Update ticket status and add resolution notes
+- Search tickets by keyword
+- Filter by status, category, and priority
+- Delete tickets with confirmation
+
+### Ticket Categories
+`VPN Issue` | `Password Reset` | `Software Installation` | `Laptop Issue` | `Email Access` | `Network Connectivity` | `Hardware Request`
+
+### Priority Levels
+`Low` | `Medium` | `High` | `Critical`
+
+### Ticket Statuses
+`Open` | `In Progress` | `Resolved` | `Closed`
+
+### API Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/tickets` | Get all tickets (with optional filters) |
+| GET | `/api/tickets/{id}` | Get ticket by ID |
+| POST | `/api/tickets` | Create new ticket |
+| PUT | `/api/tickets/{id}` | Update ticket |
+| DELETE | `/api/tickets/{id}` | Delete ticket |
+| GET | `/api/search` | Search tickets by keyword/filters |
+
+### Database Schema
+
+**Table: tickets**
+
+| Column | Type | Description |
+|--------|------|-------------|
+| ticket_id | Integer | Primary key, auto-increment |
+| employee_name | String | Name of the employee |
+| department | String | Employee's department |
+| issue_category | String | Type of issue |
+| description | Text | Detailed issue description |
+| priority | String | Low / Medium / High / Critical |
+| status | String | Open / In Progress / Resolved / Closed |
+| resolution_notes | Text | Notes added on resolution |
+| created_at | DateTime | Ticket creation timestamp |
+
+### Project Structure
+```
+HDMS/
+├── backend/
+│   ├── main.py           # FastAPI app entry point
+│   ├── database.py       # SQLAlchemy DB setup
+│   ├── models.py         # ORM models
+│   ├── schemas.py        # Pydantic schemas
+│   ├── crud.py           # Database operations
+│   ├── routers/
+│   │   └── tickets.py    # API route handlers
+│   └── requirements.txt
+├── frontend/
+│   ├── src/
+│   │   ├── components/   # Navbar, TicketCard
+│   │   ├── pages/        # Dashboard, CreateTicket, TicketList, TicketDetail
+│   │   ├── services/     # API calls (api.js)
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   ├── package.json
+│   └── vite.config.js
+└── README.md
+```
+
+---
+
+---
+
+## Project 2 — Customer Complaint & Resolution Tracking System (CCRTS)
+
+### Description
+A centralized platform for organizations to manage customer complaints end-to-end — from registration through assignment, investigation, escalation, and resolution — with full status history tracking.
+
+### Features
+- Register complaints with auto-generated complaint numbers (CMP-YYYY-NNNN)
+- Full complaint lifecycle management with status workflow
+- Assign complaints to support agents
+- Track complete status change history/timeline
+- Add resolution notes and comments
+- Search and filter complaints
+- Dashboard with complaint statistics and category breakdown
+
+### Complaint Categories
+`Billing Issues` | `Service Disruption` | `Product Defects` | `Technical Problems` | `Delivery Delays` | `Account Issues` | `Customer Service Complaints`
+
+### Priority Levels
+`Low` | `Medium` | `High` | `Critical`
+
+### Complaint Statuses
+`Open` → `Assigned` → `In Progress` → `Pending Customer Response` → `Escalated` → `Resolved` → `Closed`
+
+### API Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/complaints` | Get all complaints (with filters) |
+| GET | `/api/complaints/{id}` | Get complaint details |
+| POST | `/api/complaints` | Register new complaint |
+| PUT | `/api/complaints/{id}` | Update complaint |
+| DELETE | `/api/complaints/{id}` | Delete complaint |
+| GET | `/api/complaints/search` | Search complaints |
+| GET | `/api/complaints/{id}/history` | Get status change history |
+
+### Database Schema
+
+**Table: complaints**
+
+| Column | Type | Description |
+|--------|------|-------------|
+| complaint_id | Integer | Primary key |
+| complaint_number | String | Auto-generated (CMP-YYYY-NNNN) |
+| customer_name | String | Customer's name |
+| contact_email | String | Contact email |
+| contact_phone | String | Contact phone |
+| category | String | Complaint category |
+| priority | String | Low / Medium / High / Critical |
+| description | Text | Complaint description |
+| status | String | Current workflow status |
+| assigned_to | String | Assigned agent name |
+| resolution_notes | Text | Resolution details |
+| created_at | DateTime | Creation timestamp |
+| updated_at | DateTime | Last update timestamp |
+
+**Table: complaint_history**
+
+| Column | Type | Description |
+|--------|------|-------------|
+| history_id | Integer | Primary key |
+| complaint_id | Integer | FK to complaints |
+| old_status | String | Previous status |
+| new_status | String | Updated status |
+| updated_by | String | Who made the change |
+| comments | Text | Change comments |
+| updated_at | DateTime | Change timestamp |
+
+### Project Structure
+```
+CCRTS/
+├── backend/
+│   ├── main.py
+│   ├── database.py
+│   ├── models.py         # Complaint + ComplaintHistory models
+│   ├── schemas.py
+│   ├── crud.py           # Includes auto-number generation
+│   ├── routers/
+│   │   └── complaints.py
+│   └── requirements.txt
+├── frontend/
+│   ├── src/
+│   │   ├── components/   # Navbar, ComplaintCard
+│   │   ├── pages/        # Dashboard, RegisterComplaint, ComplaintList, ComplaintDetail
+│   │   ├── services/     # api.js
+│   │   ├── App.jsx
+│   │   └── App.css       # Red/orange theme
+│   ├── package.json
+│   └── vite.config.js
+└── README.md
+```
+
+---
+
+---
+
+## Project 3 — Enterprise Knowledge Base Management System (EKBMS)
+
+### Description
+A centralized knowledge management platform where teams can create, organize, review, and publish articles, guides, FAQs, SOPs, and documentation — with an approval workflow, search, ratings, and comments.
+
+### Features
+- Create and manage knowledge articles (with draft/publish lifecycle)
+- Category and tag management
+- Approval workflow: Author → Submit → Reviewer Approve/Reject → Published
+- Full-text search across title, content, and tags
+- Filter by category, status, and sort options
+- Article ratings (1–5 stars) and comments
+- View count tracking
+- Approval queue for reviewers
+- Dashboard with analytics (most viewed, recent, category breakdown)
+- Default categories seeded on startup
+
+### Default Categories
+`HR Policies` | `IT Support` | `Infrastructure` | `Training Materials` | `Finance` | `Operations`
+
+### Article Statuses
+`Draft` → `Pending Approval` → `Approved` / `Rejected` → `Archived`
+
+### API Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/articles` | Get all articles (with filters) |
+| GET | `/api/articles/{id}` | Get article (increments view count) |
+| POST | `/api/articles` | Create article (starts as Draft) |
+| PUT | `/api/articles/{id}` | Update article |
+| DELETE | `/api/articles/{id}` | Delete article |
+| POST | `/api/articles/{id}/submit` | Submit for review |
+| POST | `/api/articles/{id}/approve` | Approve or reject article |
+| GET | `/api/articles/{id}/comments` | Get comments |
+| POST | `/api/articles/{id}/comments` | Add comment |
+| POST | `/api/articles/{id}/rate` | Rate article (1–5) |
+| GET | `/api/search` | Search articles |
+| GET | `/api/categories` | Get all categories |
+| POST | `/api/categories` | Create category |
+| PUT | `/api/categories/{id}` | Update category |
+| DELETE | `/api/categories/{id}` | Delete category |
+
+### Database Schema
+
+**Table: articles**
+
+| Column | Type | Description |
+|--------|------|-------------|
+| article_id | Integer | Primary key |
+| title | String | Article title |
+| content | Text | Full article content |
+| summary | Text | Short summary |
+| category_id | Integer | FK to categories |
+| author_name | String | Author's name |
+| tags | String | Comma-separated tags |
+| status | String | Draft / Pending Approval / Approved / Rejected / Archived |
+| rejection_reason | Text | Reason if rejected |
+| view_count | Integer | Number of views |
+| rating | Float | Average star rating |
+| rating_count | Integer | Number of ratings |
+| created_at | DateTime | Creation timestamp |
+| updated_at | DateTime | Last update timestamp |
+
+**Table: categories**
+
+| Column | Type | Description |
+|--------|------|-------------|
+| category_id | Integer | Primary key |
+| category_name | String | Unique category name |
+| description | Text | Category description |
+| created_at | DateTime | Creation timestamp |
+
+**Table: comments**
+
+| Column | Type | Description |
+|--------|------|-------------|
+| comment_id | Integer | Primary key |
+| article_id | Integer | FK to articles |
+| commenter_name | String | Commenter's name |
+| comment_text | Text | Comment content |
+| created_at | DateTime | Timestamp |
+
+### Project Structure
+```
+EKBMS/
+├── backend/
+│   ├── main.py           # FastAPI app + category seeding
+│   ├── database.py
+│   ├── models.py         # Category, Article, Comment models
+│   ├── schemas.py
+│   ├── crud.py
+│   ├── routers/
+│   │   ├── articles.py   # 11 article endpoints
+│   │   └── categories.py # 4 category endpoints
+│   └── requirements.txt
+├── frontend/
+│   ├── src/
+│   │   ├── components/   # Navbar, ArticleCard
+│   │   ├── pages/        # Dashboard, ArticleList, CreateArticle, ArticleDetail, CategoryList, ApprovalQueue
+│   │   ├── services/     # api.js
+│   │   ├── App.jsx
+│   │   └── App.css       # Green/teal theme
+│   ├── package.json
+│   └── vite.config.js
+└── README.md
+```
+
+---
+
+## Evaluation Checklist
+
+| Criteria | HDMS | CCRTS | EKBMS |
+|----------|------|-------|-------|
+| Frontend Development | ✅ | ✅ | ✅ |
+| Backend API Development | ✅ | ✅ | ✅ |
+| Database Integration | ✅ | ✅ | ✅ |
+| CRUD Functionality | ✅ | ✅ | ✅ |
+| Search/Filtering Features | ✅ | ✅ | ✅ |
+| Code Quality & Structure | ✅ | ✅ | ✅ |
+| Documentation | ✅ | ✅ | ✅ |
+
+---
+
+## GitHub Repository Structure
+
+```
+<BatchCode>_<Name>_<ProjectCode>/
+├── frontend/
+├── backend/
+├── database/
+├── screenshots/
+├── docs/
+├── README.md
+├── requirements.txt
+└── .gitignore
+```
+
+---
+
+*All projects built as part of AFDE Capstone — Phase 1*
+
 # Customer Complaint & Resolution Tracking System (CCRS)
 
 ## Overview
