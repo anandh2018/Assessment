@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getAllTickets } from '../services/api';
+import { getAllTickets, getAnalyticsSummary, getAnalyticsCategories, getAnalyticsDepartments, runETL } from '../services/api';
 import { Badge, PRIORITY_STYLES, STATUS_STYLES } from '../components/TicketCard';
 
 function StatCard({ label, value, color, bgColor, icon }) {
@@ -47,12 +47,37 @@ function Dashboard() {
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
+  const [analytics, setAnalytics] = useState(null);
+  const [categories, setCategories] = useState([]);
+  const [departments, setDepartments] = useState([]);
+  const [etlLoading, setEtlLoading] = useState(false);
+  const [etlMsg, setEtlMsg] = useState('');
+
   useEffect(() => {
     getAllTickets()
       .then((res) => setTickets(res.data))
       .catch((err) => setError(err.message))
       .finally(() => setLoading(false));
   }, []);
+
+  useEffect(() => {
+    Promise.all([getAnalyticsSummary(), getAnalyticsCategories(), getAnalyticsDepartments()])
+      .then(([s, c, d]) => { setAnalytics(s); setCategories(c); setDepartments(d); })
+      .catch(() => {});
+  }, []);
+
+  const handleRunETL = () => {
+    setEtlLoading(true);
+    setEtlMsg('');
+    runETL()
+      .then(res => {
+        setEtlMsg(`ETL complete: ${res.records_processed} records processed.`);
+        return Promise.all([getAnalyticsSummary(), getAnalyticsCategories(), getAnalyticsDepartments()]);
+      })
+      .then(([s, c, d]) => { setAnalytics(s); setCategories(c); setDepartments(d); })
+      .catch(() => setEtlMsg('ETL failed. Ensure backend is running.'))
+      .finally(() => setEtlLoading(false));
+  };
 
   const stats = {
     total: tickets.length,
@@ -200,6 +225,72 @@ function Dashboard() {
                 ))}
               </tbody>
             </table>
+          </div>
+        )}
+      </div>
+
+      {/* ETL Analytics */}
+      <div style={{ background: '#fff', borderRadius: '10px', padding: '20px', marginTop: '24px', border: '2px solid #0d6efd', boxShadow: '0 2px 8px rgba(0,0,0,0.07)' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
+          <h3 style={{ margin: 0 }}>ETL Analytics Pipeline</h3>
+          <button onClick={handleRunETL} disabled={etlLoading} style={{ background: '#0d6efd', color: '#fff', border: 'none', borderRadius: '6px', padding: '8px 18px', cursor: 'pointer', fontWeight: 600 }}>
+            {etlLoading ? 'Running...' : 'Run ETL'}
+          </button>
+        </div>
+        {etlMsg && <div style={{ padding: '8px 12px', background: '#e7f1ff', borderRadius: '6px', color: '#0d6efd', marginBottom: '12px', fontSize: '14px' }}>{etlMsg}</div>}
+        {analytics && analytics.total_records > 0 ? (
+          <>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '12px', marginBottom: '20px' }}>
+              {[{ label: 'Total Records', value: analytics.total_records }, { label: 'Resolved', value: analytics.resolved_count }, { label: 'Avg Resolution (hrs)', value: analytics.avg_resolution_hours }].map(s => (
+                <div key={s.label} style={{ background: '#f8f9fa', borderRadius: '8px', padding: '14px', textAlign: 'center' }}>
+                  <div style={{ fontSize: '22px', fontWeight: 700, color: '#0d6efd' }}>{s.value}</div>
+                  <div style={{ fontSize: '12px', color: '#666', marginTop: '4px' }}>{s.label}</div>
+                </div>
+              ))}
+            </div>
+            {categories.length > 0 && (
+              <div style={{ marginBottom: '20px' }}>
+                <div style={{ fontWeight: 600, marginBottom: '10px' }}>Top Issue Categories</div>
+                {categories.slice(0, 8).map(c => (
+                  <div key={c.issue_category} style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '5px' }}>
+                    <div style={{ width: '150px', fontSize: '12px', color: '#555' }}>{c.issue_category}</div>
+                    <div style={{ flex: 1, background: '#eee', borderRadius: '4px', height: '16px' }}>
+                      <div style={{ width: `${Math.min((c.total_count / 25) * 100, 100)}%`, background: '#0d6efd', height: '100%', borderRadius: '4px' }} />
+                    </div>
+                    <div style={{ width: '28px', fontSize: '12px', fontWeight: 600, textAlign: 'right' }}>{c.total_count}</div>
+                  </div>
+                ))}
+              </div>
+            )}
+            {departments.length > 0 && (
+              <div>
+                <div style={{ fontWeight: 600, marginBottom: '10px' }}>Department-wise Tickets</div>
+                <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '13px' }}>
+                  <thead>
+                    <tr style={{ borderBottom: '2px solid #eee', background: '#f8f9fa' }}>
+                      <th style={{ textAlign: 'left', padding: '6px 8px' }}>Department</th>
+                      <th style={{ textAlign: 'center', padding: '6px 8px' }}>Total</th>
+                      <th style={{ textAlign: 'center', padding: '6px 8px' }}>Resolved</th>
+                      <th style={{ textAlign: 'center', padding: '6px 8px' }}>Avg Hrs</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {departments.map(d => (
+                      <tr key={d.department} style={{ borderBottom: '1px solid #f0f0f0' }}>
+                        <td style={{ padding: '6px 8px' }}>{d.department}</td>
+                        <td style={{ textAlign: 'center', padding: '6px 8px' }}>{d.ticket_count}</td>
+                        <td style={{ textAlign: 'center', padding: '6px 8px', color: '#27ae60' }}>{d.resolved_count}</td>
+                        <td style={{ textAlign: 'center', padding: '6px 8px' }}>{d.avg_resolution_hours}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+          </>
+        ) : (
+          <div style={{ textAlign: 'center', color: '#999', padding: '20px', fontSize: '14px' }}>
+            No ETL data loaded. Click "Run ETL" to process the dataset.
           </div>
         )}
       </div>

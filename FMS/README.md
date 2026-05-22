@@ -128,30 +128,85 @@ Then open http://localhost:5173 in your browser.
 
 ---
 
+## Phase 2 — ETL Pipeline
+
+Phase 2 extends the system with a Python/Pandas ETL pipeline for bulk import, transformation, and analytics reporting.
+
+### ETL Workflow
+
+```
+datasets/feedback_dataset.csv
+        │
+        ▼ EXTRACT (pandas.read_csv)
+        │
+        ▼ TRANSFORM
+        │  • Strip whitespace from text fields
+        │  • Validate ratings (keep only 1–5)
+        │  • Fill missing comments with "No comments provided"
+        │  • Remove duplicate entries (participant + program + date)
+        │
+        ▼ LOAD (SQLite analytics tables)
+        │  • feedback_analytics  — individual cleaned records
+        │  • program_summary     — per-program aggregates
+        │  • rating_distribution — rating counts and percentages
+```
+
+### Running the ETL
+
+**Via API (recommended):**
+```bash
+curl -X POST http://localhost:8001/analytics/etl/run
+```
+
+**Via Dashboard UI:**  
+Open the app → scroll to "ETL Analytics Pipeline" section → click "Run ETL".
+
+### ETL Analytics Endpoints
+
+| Method | Endpoint                    | Description                        |
+|--------|-----------------------------|------------------------------------|
+| POST   | /analytics/etl/run          | Trigger the ETL pipeline           |
+| GET    | /analytics/etl/status       | Check if ETL data is loaded        |
+| GET    | /analytics/summary          | Total records, avg rating, counts  |
+| GET    | /analytics/programs         | Per-program aggregated stats       |
+| GET    | /analytics/ratings          | Rating distribution (1–5)          |
+| GET    | /analytics/download         | Download cleaned data as CSV       |
+
+### Dataset
+
+`datasets/feedback_dataset.csv` — 120 sample records covering 10 training programs with realistic participant names, ratings, and dates (Oct 2024 – Mar 2025).
+
+---
+
 ## Project Structure
 
 ```
 FMS/
+├── datasets/
+│   └── feedback_dataset.csv   # ETL input dataset (120 records)
 ├── backend/
-│   ├── main.py          # FastAPI app entry point
-│   ├── database.py      # SQLAlchemy engine and session
-│   ├── models.py        # ORM models
-│   ├── schemas.py       # Pydantic request/response schemas
-│   ├── crud.py          # Database operations
+│   ├── main.py                # FastAPI app entry point
+│   ├── database.py            # SQLAlchemy engine and session
+│   ├── models.py              # ORM models (Phase 1)
+│   ├── analytics_models.py    # ETL analytics models (Phase 2)
+│   ├── etl.py                 # ETL pipeline (Phase 2)
+│   ├── schemas.py             # Pydantic request/response schemas
+│   ├── crud.py                # Database operations
 │   ├── routers/
-│   │   └── feedback.py  # Feedback API routes
+│   │   ├── feedback.py        # Feedback API routes
+│   │   └── analytics.py       # ETL analytics routes (Phase 2)
 │   └── requirements.txt
-├── frontend/            # React + Vite app
+├── frontend/                  # React + Vite app
 │   └── src/
-│       ├── api.js       # Axios base config
-│       ├── App.jsx      # Root component with routing
+│       ├── api.js             # Axios base config + ETL API calls
+│       ├── App.jsx            # Root component with routing
 │       └── pages/
-│           ├── Dashboard.jsx
+│           ├── Dashboard.jsx  # Dashboard + ETL analytics section
 │           ├── FeedbackList.jsx
 │           ├── SubmitFeedback.jsx
 │           └── Search.jsx
 ├── database/
-│   └── schema.sql       # SQL schema reference
+│   └── schema.sql             # SQL schema reference
 ├── README.md
 └── .gitignore
 ```

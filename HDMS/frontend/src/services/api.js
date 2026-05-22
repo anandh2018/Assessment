@@ -42,4 +42,10 @@ export const searchTickets = (params = {}) => {
   return apiClient.get('/search', { params: cleanParams });
 };
 
+export const getAnalyticsSummary = () => apiClient.get('/analytics/summary').then(r => r.data);
+export const getAnalyticsCategories = () => apiClient.get('/analytics/categories').then(r => r.data);
+export const getAnalyticsDepartments = () => apiClient.get('/analytics/departments').then(r => r.data);
+export const getAnalyticsPriorities = () => apiClient.get('/analytics/priorities').then(r => r.data);
+export const runETL = () => apiClient.post('/analytics/etl/run').then(r => r.data);
+
 export default apiClient;

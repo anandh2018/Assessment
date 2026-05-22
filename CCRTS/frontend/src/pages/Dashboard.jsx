@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getDashboardStats } from '../services/api';
+import { getDashboardStats, getAnalyticsSummary, getAnalyticsCategories, getAnalyticsAgents, runETL } from '../services/api';
 import { getStatusBadgeClass, getPriorityBadgeClass, formatDate } from '../components/ComplaintCard';
 
 const BAR_COLORS = {
@@ -17,6 +17,11 @@ function Dashboard() {
   const [stats, setStats] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const [analytics, setAnalytics] = useState(null);
+  const [categories, setCategories] = useState([]);
+  const [agents, setAgents] = useState([]);
+  const [etlLoading, setEtlLoading] = useState(false);
+  const [etlMsg, setEtlMsg] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -25,6 +30,33 @@ function Dashboard() {
       .catch(() => setError('Failed to load dashboard data. Please make sure the backend is running.'))
       .finally(() => setLoading(false));
   }, []);
+
+  useEffect(() => {
+    Promise.all([getAnalyticsSummary(), getAnalyticsCategories(), getAnalyticsAgents()])
+      .then(([summary, cats, agts]) => {
+        setAnalytics(summary);
+        setCategories(cats);
+        setAgents(agts);
+      })
+      .catch(() => {}); // Analytics may be empty initially
+  }, []);
+
+  const handleRunETL = () => {
+    setEtlLoading(true);
+    setEtlMsg('');
+    runETL()
+      .then(result => {
+        setEtlMsg(`ETL complete: ${result.records_processed} records processed.`);
+        return Promise.all([getAnalyticsSummary(), getAnalyticsCategories(), getAnalyticsAgents()]);
+      })
+      .then(([summary, cats, agts]) => {
+        setAnalytics(summary);
+        setCategories(cats);
+        setAgents(agts);
+      })
+      .catch(() => setEtlMsg('ETL failed. Make sure the backend is running.'))
+      .finally(() => setEtlLoading(false));
+  };
 
   if (loading) {
     return (
@@ -105,6 +137,69 @@ function Dashboard() {
             </div>
           ))}
         </div>
+      </div>
+
+      {/* ETL Analytics Section */}
+      <div className="card mb-4" style={{ marginBottom: '24px', border: '2px solid #2980b9' }}>
+        <div className="section-title" style={{ justifyContent: 'space-between', display: 'flex', alignItems: 'center' }}>
+          <span>ETL Analytics Pipeline</span>
+          <button
+            className="btn btn-primary btn-sm"
+            onClick={handleRunETL}
+            disabled={etlLoading}
+          >
+            {etlLoading ? 'Running...' : 'Run ETL Pipeline'}
+          </button>
+        </div>
+        {etlMsg && <div className="alert" style={{ marginBottom: '12px', padding: '8px 12px', background: '#eaf4fb', borderRadius: '6px', color: '#2980b9' }}>{etlMsg}</div>}
+        {analytics && (
+          <div className="stats-grid" style={{ marginBottom: '16px' }}>
+            <div className="stat-card total"><div className="stat-label">ETL Records</div><div className="stat-value">{analytics.total_records}</div></div>
+            <div className="stat-card escalated"><div className="stat-label">SLA Breaches</div><div className="stat-value">{analytics.sla_breached}</div></div>
+            <div className="stat-card resolved"><div className="stat-label">Resolved</div><div className="stat-value">{analytics.resolved_count}</div></div>
+            <div className="stat-card open"><div className="stat-label">Breach Rate</div><div className="stat-value">{analytics.breach_rate}%</div></div>
+          </div>
+        )}
+        {categories.length > 0 && (
+          <div style={{ marginBottom: '16px' }}>
+            <div style={{ fontWeight: 600, marginBottom: '8px', color: '#2c3e50' }}>Category Analysis</div>
+            {categories.map(c => (
+              <div key={c.category} style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
+                <div style={{ width: '160px', fontSize: '13px', color: '#555' }}>{c.category}</div>
+                <div style={{ flex: 1, background: '#eee', borderRadius: '4px', height: '18px', overflow: 'hidden' }}>
+                  <div style={{ width: `${Math.min((c.total_count / 40) * 100, 100)}%`, background: '#2980b9', height: '100%', borderRadius: '4px', transition: 'width 0.4s' }} />
+                </div>
+                <div style={{ width: '30px', textAlign: 'right', fontSize: '13px', fontWeight: 600 }}>{c.total_count}</div>
+                <div style={{ width: '80px', fontSize: '12px', color: '#c0392b' }}>{c.sla_breach_count} breaches</div>
+              </div>
+            ))}
+          </div>
+        )}
+        {agents.length > 0 && (
+          <div>
+            <div style={{ fontWeight: 600, marginBottom: '8px', color: '#2c3e50' }}>Agent Performance</div>
+            <div className="table-wrapper">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Agent</th><th>Assigned</th><th>Resolved</th><th>Avg Hours</th><th>SLA Breaches</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {agents.map(a => (
+                    <tr key={a.agent_name}>
+                      <td>{a.agent_name}</td>
+                      <td>{a.total_assigned}</td>
+                      <td>{a.resolved_count}</td>
+                      <td>{a.avg_resolution_hours}</td>
+                      <td style={{ color: a.sla_breach_count > 0 ? '#c0392b' : '#27ae60' }}>{a.sla_breach_count}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Recent Complaints Table */}

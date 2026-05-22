@@ -169,11 +169,77 @@ The Vite proxy forwards all `/api` requests to `http://localhost:8000`, so no CO
 
 ---
 
+## Phase 2 — ETL Pipeline
+
+Phase 2 extends the system with a Python/Pandas ETL pipeline for historical ticket analysis and support metrics reporting.
+
+### ETL Workflow
+
+```
+datasets/tickets_dataset.csv
+        │
+        ▼ EXTRACT (pandas.read_csv)
+        │
+        ▼ TRANSFORM
+        │  • Strip/normalize text fields (title-case priority)
+        │  • Convert resolution_time_hours to numeric
+        │  • Remove duplicate entries (employee + category + date)
+        │
+        ▼ LOAD (SQLite analytics tables)
+        │  • ticket_analytics           — individual cleaned records
+        │  • ticket_category_analytics  — per-category aggregates
+        │  • department_analytics       — per-department ticket counts
+        │  • ticket_priority_analytics  — priority distribution
+```
+
+### Running the ETL
+
+**Via API:**
+```bash
+curl -X POST http://localhost:8000/api/analytics/etl/run
+```
+
+**Via Dashboard UI:**  
+Open the app → scroll to "ETL Analytics Pipeline" section → click "Run ETL".
+
+### ETL Analytics Endpoints
+
+| Method | Endpoint                       | Description                         |
+|--------|--------------------------------|-------------------------------------|
+| POST   | /api/analytics/etl/run         | Trigger the ETL pipeline            |
+| GET    | /api/analytics/etl/status      | Check if ETL data is loaded         |
+| GET    | /api/analytics/summary         | Total records, resolved, avg hours  |
+| GET    | /api/analytics/categories      | Issue category breakdown            |
+| GET    | /api/analytics/departments     | Department-wise ticket counts       |
+| GET    | /api/analytics/priorities      | Priority distribution               |
+
+### Dataset
+
+`datasets/tickets_dataset.csv` — 212 sample records covering 12 issue categories, 10 departments, and 25 employees with dates from Oct 2024 – Apr 2025.
+
+### Updated Project Structure (Phase 2)
+
+```
+HDMS/
+├── datasets/
+│   └── tickets_dataset.csv        # ETL input dataset (212 records)
+├── backend/
+│   ├── analytics_models.py        # ETL analytics models (Phase 2)
+│   ├── etl.py                     # ETL pipeline (Phase 2)
+│   ├── routers/
+│   │   ├── tickets.py
+│   │   └── analytics.py           # ETL analytics routes (Phase 2)
+│   └── ...
+└── ...
+```
+
+---
+
 ## Screenshots
 
 _(Screenshots to be added after running the application)_
 
-- Dashboard view
+- Dashboard view with ETL analytics section
 - Ticket list with filters
 - Create ticket form
 - Ticket detail / update view

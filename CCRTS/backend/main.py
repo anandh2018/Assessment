@@ -2,10 +2,12 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from database import engine
 import models
-from routers import complaints
+import analytics_models
+from routers import complaints, analytics
 
 # Create all tables on startup
 models.Base.metadata.create_all(bind=engine)
+analytics_models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
     title="Customer Complaint & Resolution Tracking System",
@@ -24,6 +26,7 @@ app.add_middleware(
 
 # Include routers
 app.include_router(complaints.router, prefix="/api", tags=["complaints"])
+app.include_router(analytics.router, prefix="/api", tags=["analytics"])
 
 
 @app.get("/")

@@ -1,0 +1,213 @@
+employee_name,department,issue_category,priority,status,created_date,resolved_date,resolution_time_hours
+John Smith,IT,Hardware Failure,Low,Resolved,2024-10-01,2024-10-04,72
+Alice Johnson,HR,Software Bug,Medium,Resolved,2024-10-02,2024-10-04,36
+Bob Williams,Finance,Network Issue,High,Resolved,2024-10-03,2024-10-04,18
+Mary Davis,Operations,Password Reset,Critical,Resolved,2024-10-04,2024-10-04,4
+James Wilson,Marketing,Email Problem,Low,Open,2024-10-05,,0
+Patricia Moore,Sales,Printer Issue,Medium,In Progress,2024-10-06,,0
+Robert Taylor,Engineering,Access Rights,High,Resolved,2024-10-07,2024-10-08,12
+Jennifer Anderson,Customer Support,VPN Issue,Low,Resolved,2024-10-08,2024-10-11,60
+Michael Thomas,Legal,System Crash,Medium,Closed,2024-10-09,2024-10-11,24
+Linda Jackson,Administration,Data Recovery,High,Resolved,2024-10-10,2024-10-11,8
+Charles Harris,IT,Application Error,Critical,Resolved,2024-10-11,2024-10-11,3
+Barbara Martin,HR,Connectivity Issue,Low,Open,2024-10-12,,0
+William Garcia,Finance,Hardware Failure,Medium,Resolved,2024-10-13,2024-10-15,40
+Susan Martinez,Operations,Software Bug,High,In Progress,2024-10-14,,0
+David Robinson,Marketing,Network Issue,Low,Resolved,2024-10-15,2024-10-18,84
+Karen Clark,Sales,Password Reset,Medium,Resolved,2024-10-16,2024-10-18,30
+Richard Rodriguez,Engineering,Email Problem,Critical,Resolved,2024-10-17,2024-10-17,6
+Margaret Lewis,Customer Support,Printer Issue,Low,Closed,2024-10-18,2024-10-21,48
+Joseph Lee,Legal,Access Rights,Medium,Resolved,2024-10-19,2024-10-21,20
+Sandra Walker,Administration,VPN Issue,High,Resolved,2024-10-20,2024-10-21,10
+Thomas Hall,IT,System Crash,Low,Open,2024-10-21,,0
+Lisa Allen,HR,Data Recovery,Medium,Resolved,2024-10-22,2024-10-24,44
+Christopher Young,Finance,Application Error,High,Resolved,2024-10-23,2024-10-24,16
+Betty Hernandez,Operations,Connectivity Issue,Critical,Resolved,2024-10-24,2024-10-24,2
+Kevin King,Marketing,Hardware Failure,Low,In Progress,2024-10-25,,0
+John Smith,Sales,Software Bug,Medium,Resolved,2024-10-26,2024-10-28,28
+Alice Johnson,Engineering,Network Issue,High,Resolved,2024-10-27,2024-10-28,22
+Bob Williams,Customer Support,Password Reset,Low,Resolved,2024-10-28,2024-10-31,96
+Mary Davis,Legal,Email Problem,Medium,Open,2024-10-29,,0
+James Wilson,Administration,Printer Issue,Critical,Resolved,2024-10-30,2024-10-30,5
+Patricia Moore,IT,Access Rights,Low,Resolved,2024-10-31,2024-11-03,80
+Robert Taylor,HR,VPN Issue,Medium,Closed,2024-11-01,2024-11-03,32
+Jennifer Anderson,Finance,System Crash,High,Resolved,2024-11-02,2024-11-03,14
+Michael Thomas,Operations,Data Recovery,Low,Resolved,2024-11-03,2024-11-06,56
+Linda Jackson,Marketing,Application Error,Medium,In Progress,2024-11-04,,0
+Charles Harris,Sales,Connectivity Issue,High,Resolved,2024-11-05,2024-11-06,20
+Barbara Martin,Engineering,Hardware Failure,Critical,Resolved,2024-11-06,2024-11-06,7
+William Garcia,Customer Support,Software Bug,Low,Resolved,2024-11-07,2024-11-10,88
+Susan Martinez,Legal,Network Issue,Medium,Resolved,2024-11-08,2024-11-10,16
+David Robinson,Administration,Password Reset,High,Resolved,2024-11-09,2024-11-10,6
+Karen Clark,IT,Email Problem,Low,Open,2024-11-10,,0
+Richard Rodriguez,HR,Printer Issue,Medium,Resolved,2024-11-11,2024-11-13,36
+Margaret Lewis,Finance,Access Rights,Critical,Resolved,2024-11-12,2024-11-12,8
+Joseph Lee,Operations,VPN Issue,Low,Closed,2024-11-13,2024-11-16,64
+Sandra Walker,Marketing,System Crash,Medium,Resolved,2024-11-14,2024-11-16,40
+Thomas Hall,Sales,Data Recovery,High,Resolved,2024-11-15,2024-11-16,24
+Lisa Allen,Engineering,Application Error,Low,In Progress,2024-11-16,,0
+Christopher Young,Customer Support,Connectivity Issue,Medium,Resolved,2024-11-17,2024-11-19,44
+Betty Hernandez,Legal,Hardware Failure,High,Resolved,2024-11-18,2024-11-19,12
+Kevin King,Administration,Software Bug,Critical,Resolved,2024-11-19,2024-11-19,4
+John Smith,IT,Network Issue,Low,Resolved,2024-11-20,2024-11-23,72
+Alice Johnson,HR,Password Reset,Medium,Open,2024-11-21,,0
+Bob Williams,Finance,Email Problem,High,Resolved,2024-11-22,2024-11-23,18
+Mary Davis,Operations,Printer Issue,Low,Resolved,2024-11-23,2024-11-26,48
+James Wilson,Marketing,Access Rights,Medium,Resolved,2024-11-24,2024-11-26,28
+Patricia Moore,Sales,VPN Issue,Critical,Resolved,2024-11-25,2024-11-25,6
+Robert Taylor,Engineering,System Crash,Low,Closed,2024-11-26,2024-11-29,80
+Jennifer Anderson,Customer Support,Data Recovery,Medium,Resolved,2024-11-27,2024-11-29,24
+Michael Thomas,Legal,Application Error,High,In Progress,2024-11-28,,0
+Linda Jackson,Administration,Connectivity Issue,Low,Resolved,2024-11-29,2024-12-02,96
+Charles Harris,IT,Hardware Failure,Medium,Resolved,2024-11-30,2024-12-02,32
+Barbara Martin,HR,Software Bug,High,Resolved,2024-12-01,2024-12-02,16
+William Garcia,Finance,Network Issue,Critical,Resolved,2024-12-02,2024-12-02,3
+Susan Martinez,Operations,Password Reset,Low,Open,2024-12-03,,0
+David Robinson,Marketing,Email Problem,Medium,Resolved,2024-12-04,2024-12-06,40
+Karen Clark,Sales,Printer Issue,High,Resolved,2024-12-05,2024-12-06,8
+Richard Rodriguez,Engineering,Access Rights,Low,Resolved,2024-12-06,2024-12-09,56
+Margaret Lewis,Customer Support,VPN Issue,Medium,Closed,2024-12-07,2024-12-09,48
+Joseph Lee,Legal,System Crash,Critical,Resolved,2024-12-08,2024-12-08,5
+Sandra Walker,Administration,Data Recovery,Low,In Progress,2024-12-09,,0
+Thomas Hall,IT,Application Error,Medium,Resolved,2024-12-10,2024-12-12,20
+Lisa Allen,HR,Connectivity Issue,High,Resolved,2024-12-11,2024-12-12,10
+Christopher Young,Finance,Hardware Failure,Low,Resolved,2024-12-12,2024-12-15,64
+Betty Hernandez,Operations,Software Bug,Medium,Resolved,2024-12-13,2024-12-15,36
+Kevin King,Marketing,Network Issue,High,Open,2024-12-14,,0
+John Smith,Sales,Password Reset,Critical,Resolved,2024-12-15,2024-12-15,2
+Alice Johnson,Engineering,Email Problem,Low,Resolved,2024-12-16,2024-12-19,88
+Bob Williams,Customer Support,Printer Issue,Medium,Resolved,2024-12-17,2024-12-19,44
+Mary Davis,Legal,Access Rights,High,Resolved,2024-12-18,2024-12-19,22
+James Wilson,Administration,VPN Issue,Low,Closed,2024-12-19,2024-12-22,72
+Patricia Moore,IT,System Crash,Medium,In Progress,2024-12-20,,0
+Robert Taylor,HR,Data Recovery,High,Resolved,2024-12-21,2024-12-22,16
+Jennifer Anderson,Finance,Application Error,Critical,Resolved,2024-12-22,2024-12-22,7
+Michael Thomas,Operations,Connectivity Issue,Low,Resolved,2024-12-23,2024-12-26,80
+Linda Jackson,Marketing,Hardware Failure,Medium,Resolved,2024-12-24,2024-12-26,48
+Charles Harris,Sales,Software Bug,High,Resolved,2024-12-25,2024-12-26,20
+Barbara Martin,Engineering,Network Issue,Low,Open,2024-12-26,,0
+William Garcia,Customer Support,Password Reset,Medium,Resolved,2024-12-27,2024-12-29,28
+Susan Martinez,Legal,Email Problem,Critical,Resolved,2024-12-28,2024-12-28,4
+David Robinson,Administration,Printer Issue,Low,Resolved,2024-12-29,2025-01-01,60
+Karen Clark,IT,Access Rights,Medium,Resolved,2024-12-30,2025-01-01,36
+Richard Rodriguez,HR,VPN Issue,High,Closed,2024-12-31,2025-01-02,14
+Margaret Lewis,Finance,System Crash,Low,Resolved,2025-01-01,2025-01-04,56
+Joseph Lee,Operations,Data Recovery,Medium,In Progress,2025-01-02,,0
+Sandra Walker,Marketing,Application Error,High,Resolved,2025-01-03,2025-01-04,8
+Thomas Hall,Sales,Connectivity Issue,Critical,Resolved,2025-01-04,2025-01-04,6
+Lisa Allen,Engineering,Hardware Failure,Low,Resolved,2025-01-05,2025-01-08,96
+Christopher Young,Customer Support,Software Bug,Medium,Resolved,2025-01-06,2025-01-08,40
+Betty Hernandez,Legal,Network Issue,High,Resolved,2025-01-07,2025-01-08,18
+Kevin King,Administration,Password Reset,Low,Open,2025-01-08,,0
+John Smith,IT,Email Problem,Medium,Resolved,2025-01-09,2025-01-11,32
+Alice Johnson,HR,Printer Issue,Critical,Resolved,2025-01-10,2025-01-10,5
+Bob Williams,Finance,Access Rights,Low,Resolved,2025-01-11,2025-01-14,84
+Mary Davis,Operations,VPN Issue,Medium,Closed,2025-01-12,2025-01-14,44
+James Wilson,Marketing,System Crash,High,Resolved,2025-01-13,2025-01-14,12
+Patricia Moore,Sales,Data Recovery,Low,In Progress,2025-01-14,,0
+Robert Taylor,Engineering,Application Error,Medium,Resolved,2025-01-15,2025-01-17,20
+Jennifer Anderson,Customer Support,Connectivity Issue,High,Resolved,2025-01-16,2025-01-17,10
+Michael Thomas,Legal,Hardware Failure,Critical,Resolved,2025-01-17,2025-01-17,3
+Linda Jackson,Administration,Software Bug,Low,Resolved,2025-01-18,2025-01-21,64
+Charles Harris,IT,Network Issue,Medium,Open,2025-01-19,,0
+Barbara Martin,HR,Password Reset,High,Resolved,2025-01-20,2025-01-21,16
+William Garcia,Finance,Email Problem,Low,Resolved,2025-01-21,2025-01-24,72
+Susan Martinez,Operations,Printer Issue,Medium,Resolved,2025-01-22,2025-01-24,28
+David Robinson,Marketing,Access Rights,Critical,Resolved,2025-01-23,2025-01-23,8
+Karen Clark,Sales,VPN Issue,Low,Closed,2025-01-24,2025-01-27,80
+Richard Rodriguez,Engineering,System Crash,Medium,Resolved,2025-01-25,2025-01-27,48
+Margaret Lewis,Customer Support,Data Recovery,High,In Progress,2025-01-26,,0
+Joseph Lee,Legal,Application Error,Low,Resolved,2025-01-27,2025-01-30,56
+Sandra Walker,Administration,Connectivity Issue,Medium,Resolved,2025-01-28,2025-01-30,36
+Thomas Hall,IT,Hardware Failure,High,Resolved,2025-01-29,2025-01-30,24
+Lisa Allen,HR,Software Bug,Critical,Resolved,2025-01-30,2025-01-30,7
+Christopher Young,Finance,Network Issue,Low,Open,2025-01-31,,0
+Betty Hernandez,Operations,Password Reset,Medium,Resolved,2025-02-01,2025-02-03,32
+Kevin King,Marketing,Email Problem,High,Resolved,2025-02-02,2025-02-03,20
+John Smith,Sales,Printer Issue,Low,Resolved,2025-02-03,2025-02-06,88
+Alice Johnson,Engineering,Access Rights,Medium,Closed,2025-02-04,2025-02-06,40
+Bob Williams,Customer Support,VPN Issue,Critical,Resolved,2025-02-05,2025-02-05,4
+Mary Davis,Legal,System Crash,Low,Resolved,2025-02-06,2025-02-09,60
+James Wilson,Administration,Data Recovery,Medium,In Progress,2025-02-07,,0
+Patricia Moore,IT,Application Error,High,Resolved,2025-02-08,2025-02-09,14
+Robert Taylor,HR,Connectivity Issue,Low,Resolved,2025-02-09,2025-02-12,96
+Jennifer Anderson,Finance,Hardware Failure,Medium,Resolved,2025-02-10,2025-02-12,44
+Michael Thomas,Operations,Software Bug,Critical,Resolved,2025-02-11,2025-02-11,6
+Linda Jackson,Marketing,Network Issue,Low,Open,2025-02-12,,0
+Charles Harris,Sales,Password Reset,Medium,Resolved,2025-02-13,2025-02-15,24
+Barbara Martin,Engineering,Email Problem,High,Resolved,2025-02-14,2025-02-15,18
+William Garcia,Customer Support,Printer Issue,Low,Closed,2025-02-15,2025-02-18,64
+Susan Martinez,Legal,Access Rights,Medium,Resolved,2025-02-16,2025-02-18,28
+David Robinson,Administration,VPN Issue,Critical,Resolved,2025-02-17,2025-02-17,2
+Karen Clark,IT,System Crash,Low,Resolved,2025-02-18,2025-02-21,84
+Richard Rodriguez,HR,Data Recovery,Medium,In Progress,2025-02-19,,0
+Margaret Lewis,Finance,Application Error,High,Resolved,2025-02-20,2025-02-21,10
+Joseph Lee,Operations,Connectivity Issue,Low,Resolved,2025-02-21,2025-02-24,52
+Sandra Walker,Marketing,Hardware Failure,Medium,Resolved,2025-02-22,2025-02-24,36
+Thomas Hall,Sales,Software Bug,Critical,Resolved,2025-02-23,2025-02-23,5
+Lisa Allen,Engineering,Network Issue,Low,Resolved,2025-02-24,2025-02-27,76
+Christopher Young,Customer Support,Password Reset,Medium,Open,2025-02-25,,0
+Betty Hernandez,Legal,Email Problem,High,Resolved,2025-02-26,2025-02-27,22
+Kevin King,Administration,Printer Issue,Low,Resolved,2025-02-27,2025-03-02,68
+John Smith,IT,Access Rights,Medium,Closed,2025-02-28,2025-03-02,48
+Alice Johnson,HR,VPN Issue,High,Resolved,2025-03-01,2025-03-02,16
+Bob Williams,Finance,System Crash,Critical,Resolved,2025-03-02,2025-03-02,7
+Mary Davis,Operations,Data Recovery,Low,In Progress,2025-03-03,,0
+James Wilson,Marketing,Application Error,Medium,Resolved,2025-03-04,2025-03-06,30
+Patricia Moore,Sales,Connectivity Issue,High,Resolved,2025-03-05,2025-03-06,12
+Robert Taylor,Engineering,Hardware Failure,Low,Resolved,2025-03-06,2025-03-09,92
+Jennifer Anderson,Customer Support,Software Bug,Medium,Resolved,2025-03-07,2025-03-09,38
+Michael Thomas,Legal,Network Issue,Critical,Resolved,2025-03-08,2025-03-08,3
+Linda Jackson,Administration,Password Reset,Low,Resolved,2025-03-09,2025-03-12,56
+Charles Harris,IT,Email Problem,Medium,Open,2025-03-10,,0
+Barbara Martin,HR,Printer Issue,High,Resolved,2025-03-11,2025-03-12,20
+William Garcia,Finance,Access Rights,Low,Resolved,2025-03-12,2025-03-15,76
+Susan Martinez,Operations,VPN Issue,Medium,Closed,2025-03-13,2025-03-15,44
+David Robinson,Marketing,System Crash,Critical,Resolved,2025-03-14,2025-03-14,6
+Karen Clark,Sales,Data Recovery,Low,Resolved,2025-03-15,2025-03-18,88
+Richard Rodriguez,Engineering,Application Error,Medium,In Progress,2025-03-16,,0
+Margaret Lewis,Customer Support,Connectivity Issue,High,Resolved,2025-03-17,2025-03-18,14
+Joseph Lee,Legal,Hardware Failure,Low,Resolved,2025-03-18,2025-03-21,60
+Sandra Walker,Administration,Software Bug,Medium,Resolved,2025-03-19,2025-03-21,32
+Thomas Hall,IT,Network Issue,Critical,Resolved,2025-03-20,2025-03-20,8
+Lisa Allen,HR,Password Reset,Low,Open,2025-03-21,,0
+Christopher Young,Finance,Email Problem,Medium,Resolved,2025-03-22,2025-03-24,46
+Betty Hernandez,Operations,Printer Issue,High,Resolved,2025-03-23,2025-03-24,18
+Kevin King,Marketing,Access Rights,Low,Resolved,2025-03-24,2025-03-27,80
+John Smith,Sales,VPN Issue,Medium,Closed,2025-03-25,2025-03-27,40
+Alice Johnson,Engineering,System Crash,Critical,Resolved,2025-03-26,2025-03-26,4
+Bob Williams,Customer Support,Data Recovery,Low,Resolved,2025-03-27,2025-03-30,72
+Mary Davis,Legal,Application Error,Medium,In Progress,2025-03-28,,0
+James Wilson,Administration,Connectivity Issue,High,Resolved,2025-03-29,2025-03-30,10
+Patricia Moore,IT,Hardware Failure,Low,Resolved,2025-03-30,2025-04-02,56
+Robert Taylor,HR,Software Bug,Medium,Resolved,2025-03-31,2025-04-02,36
+Jennifer Anderson,Finance,Network Issue,Critical,Resolved,2025-04-01,2025-04-01,5
+Michael Thomas,Operations,Password Reset,Low,Resolved,2025-04-02,2025-04-05,96
+Linda Jackson,Marketing,Email Problem,Medium,Open,2025-04-03,,0
+Charles Harris,Sales,Printer Issue,High,Resolved,2025-04-04,2025-04-05,24
+Barbara Martin,Engineering,Access Rights,Low,Resolved,2025-04-05,2025-04-08,84
+William Garcia,Customer Support,VPN Issue,Medium,Closed,2025-04-06,2025-04-08,28
+Susan Martinez,Legal,System Crash,Critical,Resolved,2025-04-07,2025-04-07,7
+David Robinson,Administration,Data Recovery,Low,In Progress,2025-04-08,,0
+Karen Clark,IT,Application Error,Medium,Resolved,2025-04-09,2025-04-11,42
+Richard Rodriguez,HR,Connectivity Issue,High,Resolved,2025-04-10,2025-04-11,16
+Margaret Lewis,Finance,Hardware Failure,Low,Resolved,2025-04-11,2025-04-14,68
+Joseph Lee,Operations,Software Bug,Medium,Resolved,2025-04-12,2025-04-14,34
+Sandra Walker,Marketing,Network Issue,Critical,Resolved,2025-04-13,2025-04-13,6
+Thomas Hall,Sales,Password Reset,Low,Resolved,2025-04-14,2025-04-17,52
+Lisa Allen,Engineering,Email Problem,Medium,Open,2025-04-15,,0
+Christopher Young,Customer Support,Printer Issue,High,Resolved,2025-04-16,2025-04-17,12
+Betty Hernandez,Legal,Access Rights,Low,Resolved,2025-04-17,2025-04-20,76
+Kevin King,Administration,VPN Issue,Medium,Closed,2025-04-18,2025-04-20,44
+John Smith,IT,System Crash,Critical,Resolved,2025-04-19,2025-04-19,3
+Alice Johnson,HR,Data Recovery,Low,Resolved,2025-04-20,2025-04-23,92
+Bob Williams,Finance,Application Error,Medium,In Progress,2025-04-21,,0
+Mary Davis,Operations,Connectivity Issue,High,Resolved,2025-04-22,2025-04-23,20
+James Wilson,Marketing,Hardware Failure,Low,Resolved,2025-04-23,2025-04-26,64
+Patricia Moore,Sales,Software Bug,Medium,Resolved,2025-04-24,2025-04-26,38
+Robert Taylor,Engineering,Network Issue,Critical,Resolved,2025-04-25,2025-04-25,8
+Jennifer Anderson,Customer Support,Password Reset,Low,Resolved,2025-04-26,2025-04-29,48
+Michael Thomas,Legal,Email Problem,Medium,Open,2025-04-27,,0
+Linda Jackson,Administration,Printer Issue,High,Resolved,2025-04-28,2025-04-29,22
+Charles Harris,IT,Access Rights,Low,Resolved,2025-04-29,2025-04-30,30
+Barbara Martin,HR,VPN Issue,Medium,Closed,2025-04-30,2025-04-30,26

@@ -1,0 +1,120 @@
+title,category,tags,author_name,view_count,rating,status,created_at
+How to Reset Active Directory Password,IT Support,password,security,IT,Alice Wong,342,4.5,Approved,2024-09-03
+VPN Configuration Guide,Infrastructure,vpn,network,remote,Bob Martinez,289,4.2,Approved,2024-09-05
+Expense Report Submission Process,Finance,expense,finance,reimbursement,Carol Smith,198,3.8,Approved,2024-09-08
+New Employee Onboarding Checklist,HR Policies,onboarding,HR,training,David Lee,415,4.7,Approved,2024-09-10
+AWS S3 Bucket Configuration,Infrastructure,cloud,AWS,infrastructure,Emma Johnson,376,4.6,Approved,2024-09-12
+Python Best Practices for Data Engineering,Training Materials,python,data,engineering,Frank Brown,312,4.4,Approved,2024-09-15
+Office 365 Troubleshooting,IT Support,office365,troubleshooting,productivity,Grace Chen,267,3.9,Approved,2024-09-18
+Network Security Policy,Infrastructure,security,network,policy,Henry Davis,224,4.1,Approved,2024-09-20
+Agile Sprint Planning Guide,Operations,agile,sprint,planning,Iris Taylor,183,4.3,Approved,2024-09-22
+Budget Approval Workflow,Finance,budget,finance,approval,Jack Wilson,156,3.7,Approved,2024-09-25
+Employee Leave Policy,HR Policies,leave,HR,policy,Alice Wong,298,4.2,Approved,2024-09-27
+Server Backup Procedures,Infrastructure,backup,server,recovery,Bob Martinez,241,4.0,Approved,2024-10-01
+Annual Performance Review Guide,HR Policies,performance,review,HR,Carol Smith,327,4.5,Approved,2024-10-03
+Cloud Cost Optimization Strategies,Infrastructure,cloud,cost,AWS,David Lee,389,4.6,Approved,2024-10-05
+IT Asset Management Policy,IT Support,assets,IT,policy,Emma Johnson,175,3.6,Approved,2024-10-08
+Workplace Health and Safety Guidelines,HR Policies,safety,health,compliance,Frank Brown,203,4.1,Approved,2024-10-10
+Docker Container Deployment Guide,Infrastructure,docker,containers,devops,Grace Chen,431,4.8,Approved,2024-10-12
+Invoice Processing Workflow,Finance,invoice,finance,workflow,Henry Davis,167,3.8,Approved,2024-10-15
+Customer Escalation Handling Process,Operations,escalation,customer,support,Iris Taylor,214,4.2,Approved,2024-10-18
+Remote Work Policy and Guidelines,HR Policies,remote,work,policy,Jack Wilson,356,4.4,Approved,2024-10-20
+Kubernetes Cluster Setup,Infrastructure,kubernetes,devops,cloud,Alice Wong,298,4.3,Draft,2024-10-22
+Phishing Awareness Training,Training Materials,phishing,security,awareness,Bob Martinez,445,4.9,Approved,2024-10-25
+Travel and Entertainment Policy,Finance,travel,expense,policy,Carol Smith,189,3.7,Approved,2024-10-27
+Incident Management Procedure,Operations,incident,management,ITIL,David Lee,267,4.2,Approved,2024-11-01
+ServiceNow Ticket Creation Guide,IT Support,servicenow,ticketing,helpdesk,Emma Johnson,312,4.5,Approved,2024-11-03
+Code Review Best Practices,Training Materials,code,review,development,Frank Brown,278,4.4,Approved,2024-11-05
+Payroll Processing Guidelines,Finance,payroll,HR,finance,Grace Chen,145,3.5,Approved,2024-11-08
+Disaster Recovery Plan,Infrastructure,disaster,recovery,business-continuity,Henry Davis,398,4.7,Approved,2024-11-10
+Software Development Lifecycle Guide,Training Materials,SDLC,development,process,Iris Taylor,334,4.6,Approved,2024-11-12
+Email Retention and Archival Policy,Operations,email,retention,compliance,Jack Wilson,167,3.9,Approved,2024-11-15
+Windows 11 Upgrade Procedure,IT Support,windows,upgrade,IT,Alice Wong,421,4.8,Approved,2024-11-18
+Vendor Management Policy,Operations,vendor,procurement,management,Bob Martinez,198,4.0,Approved,2024-11-20
+Data Privacy and GDPR Compliance,HR Policies,GDPR,privacy,compliance,Carol Smith,356,4.5,Approved,2024-11-22
+Azure Active Directory Setup,Infrastructure,azure,AD,cloud,David Lee,289,4.3,Approved,2024-11-25
+Procurement Request Process,Finance,procurement,purchasing,finance,Emma Johnson,176,3.8,Approved,2024-11-27
+Change Management Framework,Operations,change,management,ITIL,Frank Brown,243,4.1,Approved,2024-12-01
+Linux Server Administration Basics,Infrastructure,linux,server,admin,Grace Chen,367,4.6,Approved,2024-12-03
+Employee Code of Conduct,HR Policies,conduct,policy,HR,Henry Davis,278,4.2,Approved,2024-12-05
+Jira Project Management Guide,Training Materials,jira,project,management,Iris Taylor,312,4.5,Approved,2024-12-08
+Tax Filing Guidelines for Employees,Finance,tax,finance,compliance,Jack Wilson,189,3.9,Approved,2024-12-10
+SSL Certificate Renewal Process,IT Support,SSL,certificate,security,Alice Wong,234,4.3,Approved,2024-12-12
+Business Continuity Planning,Operations,continuity,planning,risk,Bob Martinez,287,4.4,Approved,2024-12-15
+Terraform Infrastructure as Code Guide,Infrastructure,terraform,IaC,devops,Carol Smith,423,4.8,Approved,2024-12-18
+Benefits Enrollment Procedure,HR Policies,benefits,enrollment,HR,David Lee,156,3.7,Approved,2024-12-20
+Git Branching Strategy,Training Materials,git,branching,development,Emma Johnson,389,4.7,Approved,2024-12-22
+Accounts Payable Process,Finance,accounts,payable,finance,Frank Brown,145,3.6,Approved,2024-12-25
+Problem Management Procedure,Operations,problem,management,ITIL,Grace Chen,198,4.0,Pending Approval,2024-12-27
+Firewall Configuration Standards,Infrastructure,firewall,security,network,Henry Davis,312,4.5,Approved,2025-01-03
+Diversity and Inclusion Policy,HR Policies,diversity,inclusion,HR,Iris Taylor,267,4.3,Approved,2025-01-05
+REST API Design Guidelines,Training Materials,API,REST,development,Jack Wilson,445,4.9,Approved,2025-01-08
+Monthly Budget Reconciliation,Finance,budget,reconciliation,finance,Alice Wong,134,3.5,Approved,2025-01-10
+Service Level Agreement Management,Operations,SLA,service,management,Bob Martinez,234,4.2,Approved,2025-01-12
+Multi-Factor Authentication Setup,IT Support,MFA,authentication,security,Carol Smith,487,4.9,Approved,2025-01-15
+Database Backup and Recovery,Infrastructure,database,backup,recovery,David Lee,356,4.6,Approved,2025-01-18
+Onboarding Training Schedule,Training Materials,onboarding,training,schedule,Emma Johnson,289,4.4,Approved,2025-01-20
+Revenue Recognition Policy,Finance,revenue,finance,accounting,Frank Brown,167,3.8,Approved,2025-01-22
+Project Status Reporting Guidelines,Operations,project,reporting,management,Grace Chen,243,4.1,Approved,2025-01-25
+Printer and Peripheral Setup,IT Support,printer,hardware,setup,Henry Davis,178,3.7,Approved,2025-01-27
+AWS EC2 Instance Management,Infrastructure,EC2,AWS,cloud,Iris Taylor,398,4.7,Approved,2025-02-01
+Conflict Resolution in the Workplace,HR Policies,conflict,resolution,HR,Jack Wilson,212,4.0,Approved,2025-02-03
+CI/CD Pipeline Implementation,Training Materials,CI/CD,devops,automation,Alice Wong,467,4.8,Approved,2025-02-05
+Capital Expenditure Approval Process,Finance,capex,finance,approval,Bob Martinez,145,3.6,Draft,2025-02-08
+Vendor Onboarding Checklist,Operations,vendor,onboarding,procurement,Carol Smith,198,4.1,Approved,2025-02-10
+Laptop Imaging and Deployment,IT Support,laptop,imaging,deployment,David Lee,267,4.3,Approved,2025-02-12
+Network Monitoring Best Practices,Infrastructure,network,monitoring,performance,Emma Johnson,334,4.5,Approved,2025-02-15
+Anti-Harassment Policy,HR Policies,harassment,policy,HR,Frank Brown,289,4.4,Approved,2025-02-18
+Tableau Dashboard Creation Guide,Training Materials,tableau,dashboard,analytics,Grace Chen,356,4.6,Approved,2025-02-20
+General Ledger Maintenance,Finance,ledger,accounting,finance,Henry Davis,123,3.4,Approved,2025-02-22
+Business Process Improvement Methods,Operations,process,improvement,lean,Iris Taylor,212,4.0,Approved,2025-02-25
+VoIP Phone System Configuration,IT Support,voip,phone,communication,Jack Wilson,189,3.9,Approved,2025-02-27
+GCP Cloud Storage Configuration,Infrastructure,GCP,cloud,storage,Alice Wong,312,4.5,Pending Approval,2025-03-01
+Employee Wellness Program Guide,HR Policies,wellness,health,HR,Bob Martinez,234,4.2,Approved,2025-03-03
+Microservices Architecture Overview,Training Materials,microservices,architecture,development,Carol Smith,423,4.8,Approved,2025-03-05
+Petty Cash Management Policy,Finance,petty-cash,finance,policy,David Lee,112,3.4,Approved,2025-03-08
+Release Management Procedure,Operations,release,management,deployment,Emma Johnson,267,4.3,Approved,2025-03-10
+Active Directory Group Policy Management,IT Support,AD,GPO,security,Frank Brown,345,4.6,Approved,2025-03-12
+Load Balancer Configuration Guide,Infrastructure,load-balancer,nginx,infrastructure,Grace Chen,289,4.4,Approved,2025-03-15
+Salary Revision Process,HR Policies,salary,compensation,HR,Henry Davis,198,3.8,Draft,2025-03-18
+Splunk Log Analysis Guide,Training Materials,splunk,logging,monitoring,Iris Taylor,378,4.7,Approved,2025-03-20
+Financial Audit Preparation Checklist,Finance,audit,finance,compliance,Jack Wilson,156,3.7,Approved,2025-03-22
+IT Risk Assessment Framework,Operations,risk,IT,assessment,Alice Wong,243,4.1,Approved,2025-03-25
+Help Desk Ticketing Best Practices,IT Support,helpdesk,ticketing,support,Bob Martinez,312,4.5,Approved,2025-03-27
+Elasticsearch Cluster Configuration,Infrastructure,elasticsearch,search,infrastructure,Carol Smith,267,4.3,Approved,2025-04-01
+Employee Grievance Procedure,HR Policies,grievance,HR,policy,David Lee,178,3.8,Approved,2025-04-03
+Power BI Report Development Guide,Training Materials,PowerBI,reporting,analytics,Emma Johnson,434,4.8,Approved,2025-04-05
+Cost Center Management Guidelines,Finance,cost-center,finance,management,Frank Brown,134,3.5,Pending Approval,2025-04-08
+Operational Risk Management,Operations,risk,operations,management,Grace Chen,223,4.0,Approved,2025-04-10
+Network Access Control Setup,IT Support,NAC,network,security,Henry Davis,289,4.4,Approved,2025-04-12
+Redis Cache Configuration,Infrastructure,redis,cache,performance,Iris Taylor,356,4.6,Approved,2025-04-15
+Termination and Offboarding Process,HR Policies,termination,offboarding,HR,Jack Wilson,234,4.2,Approved,2025-04-18
+Agile Scrum Master Handbook,Training Materials,scrum,agile,master,Alice Wong,389,4.7,Approved,2025-04-20
+Intercompany Transaction Guidelines,Finance,intercompany,finance,accounting,Bob Martinez,112,3.3,Rejected,2025-04-22
+Service Catalog Management,Operations,service,catalog,ITIL,Carol Smith,198,4.0,Approved,2025-04-25
+Endpoint Detection and Response Setup,IT Support,EDR,security,endpoint,David Lee,423,4.8,Approved,2025-04-28
+Ansible Automation Playbooks,Infrastructure,ansible,automation,devops,Emma Johnson,356,4.6,Approved,2025-04-30
+Work From Home Equipment Policy,HR Policies,WFH,equipment,policy,Frank Brown,267,4.3,Approved,2024-09-14
+Grafana Monitoring Dashboard,Training Materials,grafana,monitoring,dashboard,Grace Chen,312,4.5,Approved,2024-09-30
+Accounts Receivable Procedures,Finance,accounts,receivable,finance,Henry Davis,145,3.6,Approved,2024-10-07
+Capacity Planning Guidelines,Operations,capacity,planning,infrastructure,Iris Taylor,234,4.1,Approved,2024-10-24
+DNS Management and Configuration,IT Support,DNS,network,IT,Jack Wilson,278,4.3,Approved,2024-11-06
+VMware Virtual Machine Management,Infrastructure,VMware,virtual,infrastructure,Alice Wong,334,4.5,Approved,2024-11-19
+Job Description Writing Guidelines,HR Policies,recruitment,HR,job,Bob Martinez,189,3.9,Approved,2024-12-02
+Selenium Test Automation Framework,Training Materials,selenium,testing,automation,Carol Smith,367,4.6,Approved,2024-12-16
+Foreign Currency Transaction Policy,Finance,currency,finance,forex,David Lee,123,3.4,Draft,2025-01-04
+Supplier Evaluation Criteria,Operations,supplier,evaluation,procurement,Emma Johnson,212,4.0,Approved,2025-01-17
+Software License Management,IT Support,software,license,compliance,Frank Brown,298,4.4,Approved,2025-01-30
+Kubernetes Helm Chart Deployment,Infrastructure,kubernetes,helm,devops,Grace Henry,412,4.8,Approved,2025-02-13
+Equal Opportunity Employment Policy,HR Policies,EEO,policy,HR,Henry Davis,223,4.1,Approved,2025-02-26
+Apache Kafka Integration Guide,Training Materials,kafka,messaging,integration,Iris Taylor,378,4.7,Approved,2025-03-11
+Depreciation Calculation Methods,Finance,depreciation,accounting,finance,Jack Wilson,134,3.5,Rejected,2025-03-24
+Contract Lifecycle Management,Operations,contract,lifecycle,management,Alice Wong,267,4.2,Pending Approval,2025-04-07
+Active Directory Password Policy,IT Support,password,AD,security,Bob Martinez,456,4.9,Approved,2025-04-21
+PostgreSQL Database Administration,Infrastructure,postgresql,database,admin,Carol Smith,323,4.5,Approved,2025-04-29
+Internship Program Guidelines,HR Policies,internship,HR,training,David Lee,167,3.7,Archived,2024-09-28
+DevSecOps Implementation Guide,Training Materials,DevSecOps,security,devops,Emma Johnson,398,4.7,Approved,2025-01-22
+Fixed Assets Register Management,Finance,fixed-assets,accounting,finance,Frank Brown,112,3.3,Archived,2025-02-14
+Knowledge Base Article Writing Standards,Operations,knowledge,writing,standards,Grace Chen,243,4.2,Approved,2025-03-28
+Zero Trust Security Architecture,Infrastructure,security,zero-trust,network,Henry Davis,387,4.7,Approved,2025-04-14
+Employee Referral Program Guidelines,HR Policies,referral,recruitment,HR,Iris Taylor,156,3.8,Approved,2025-04-17

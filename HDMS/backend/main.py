@@ -2,10 +2,13 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from database import engine
 import models
+import analytics_models
 from routers import tickets
+from routers import analytics as analytics_router
 
 # Create all database tables
 models.Base.metadata.create_all(bind=engine)
+analytics_models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
     title="Helpdesk Ticket Management System",
@@ -24,6 +27,7 @@ app.add_middleware(
 
 # Include routers
 app.include_router(tickets.router, prefix="/api", tags=["tickets"])
+app.include_router(analytics_router.router, prefix="/api", tags=["analytics"])
 
 
 @app.get("/", tags=["root"])

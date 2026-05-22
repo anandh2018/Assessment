@@ -2,12 +2,14 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from database import engine, SessionLocal
 import models
-from routers import articles, categories
+import analytics_models
+from routers import articles, categories, analytics as analytics_router
 from schemas import CategoryCreate
 import crud
 
 # Create all tables
 models.Base.metadata.create_all(bind=engine)
+analytics_models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
     title="Enterprise Knowledge Base Management System",
@@ -27,6 +29,7 @@ app.add_middleware(
 # Include routers
 app.include_router(articles.router, prefix="/api/articles", tags=["Articles"])
 app.include_router(categories.router, prefix="/api/categories", tags=["Categories"])
+app.include_router(analytics_router.router, prefix="/api", tags=["analytics"])
 
 
 # Seed default categories on startup

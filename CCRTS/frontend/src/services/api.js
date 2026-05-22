@@ -55,4 +55,24 @@ export const getDashboardStats = async () => {
   return response.data;
 };
 
+export const getAnalyticsSummary = async () => {
+  const response = await api.get('/analytics/summary');
+  return response.data;
+};
+
+export const getAnalyticsCategories = async () => {
+  const response = await api.get('/analytics/categories');
+  return response.data;
+};
+
+export const getAnalyticsAgents = async () => {
+  const response = await api.get('/analytics/agents');
+  return response.data;
+};
+
+export const runETL = async () => {
+  const response = await api.post('/analytics/etl/run');
+  return response.data;
+};
+
 export default api;

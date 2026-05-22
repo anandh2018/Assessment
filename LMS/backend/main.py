@@ -3,12 +3,15 @@ from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 from database import engine, get_db, Base
 import models
+import analytics_models
 import crud
 import schemas
 from routers import books, borrowers, transactions
+from routers import analytics as analytics_router
 
 # Create all database tables
 Base.metadata.create_all(bind=engine)
+analytics_models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="Library Management System", version="1.0.0")
 
@@ -25,6 +28,7 @@ app.add_middleware(
 app.include_router(books.router)
 app.include_router(borrowers.router)
 app.include_router(transactions.router)
+app.include_router(analytics_router.router)
 
 
 @app.get("/")

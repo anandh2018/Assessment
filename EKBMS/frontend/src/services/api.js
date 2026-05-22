@@ -56,4 +56,10 @@ export const updateCategory = (id, data) =>
 export const deleteCategory = (id) =>
   api.delete(`/categories/${id}`).then(r => r.data)
 
+export const getKBAnalyticsSummary = () => api.get('/analytics/summary').then(r => r.data);
+export const getKBAnalyticsCategories = () => api.get('/analytics/categories').then(r => r.data);
+export const getKBTopArticles = () => api.get('/analytics/top-articles').then(r => r.data);
+export const getKBAuthors = () => api.get('/analytics/authors').then(r => r.data);
+export const runKBETL = () => api.post('/analytics/etl/run').then(r => r.data);
+
 export default api

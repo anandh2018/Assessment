@@ -6,8 +6,11 @@ import crud
 import schemas
 from database import engine, get_db
 from routers import feedback
+import analytics_models
+from routers import analytics as analytics_router
 
 models.Base.metadata.create_all(bind=engine)
+analytics_models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
     title="Feedback Management System API",
@@ -24,6 +27,7 @@ app.add_middleware(
 )
 
 app.include_router(feedback.router)
+app.include_router(analytics_router.router)
 
 
 @app.get("/")
